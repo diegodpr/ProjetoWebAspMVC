@@ -5,6 +5,7 @@ using System.Linq;
 using System.Threading.Tasks;
 using WebApplication1.Services;
 using WebApplication1.Models;
+using WebApplication1.Models.ViewModel;
 
 namespace WebApplication1.Controllers
 {
@@ -12,9 +13,12 @@ namespace WebApplication1.Controllers
     {
         private readonly SellerServices _sellerServices;
 
-        public SellersController(SellerServices sellerServices)
+        private readonly DepartmentsServices _departmentsServices;
+
+        public SellersController(SellerServices sellerServices, DepartmentsServices departmentsServices)
         {
             _sellerServices = sellerServices;
+            _departmentsServices = departmentsServices;
         }
 
         public IActionResult Index()
@@ -27,7 +31,10 @@ namespace WebApplication1.Controllers
 
         public IActionResult Create()
         {
-            return View();
+
+            var department = _departmentsServices.FindAll();
+            var viewModel = new SellerFormViewModel { Department= department};
+            return View(viewModel);
         }
 
 
