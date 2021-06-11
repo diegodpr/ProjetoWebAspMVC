@@ -11,6 +11,7 @@ using System.Linq;
 using System.Threading.Tasks;
 using Microsoft.EntityFrameworkCore;
 using WebApplication1.Data;
+using WebApplication1.Services;
 
 namespace WebApplication1
 {
@@ -42,6 +43,7 @@ namespace WebApplication1
 
 
             services.AddScoped<SeedingService>();
+            services.AddScoped<SellerServices>();
         }
 
 
@@ -51,7 +53,7 @@ namespace WebApplication1
             if (env.IsDevelopment())
             {
                 app.UseDeveloperExceptionPage();
-                seedingService.Seed();
+                
             }
             else
             {

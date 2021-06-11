@@ -18,12 +18,8 @@ namespace WebApplication1.Data
 
         public void Seed()
         {
-            if(_context.Department.Any() || _context.Seller.Any() ||
-                _context.SalesRecord.Any())
-            {
-                return;
-            }
-
+            
+            /*
             Department d1 = new Department(1, "Computers");
             Department d2 = new Department(2, "Eletronics");
             Department d3 = new Department(3, "Books");
@@ -40,7 +36,7 @@ namespace WebApplication1.Data
             _context.Seller.AddRange(s1, s2, s3);
             _context.SalesRecord.AddRange(sr1, sr2, sr3);
 
-            _context.SaveChanges();
+            _context.SaveChanges(); */
 
         }
     }
