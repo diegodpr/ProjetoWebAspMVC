@@ -43,7 +43,9 @@ namespace WebApplication1
 
 
             services.AddScoped<SeedingService>();
-            services.AddScoped<SellerServices>();
+            services.AddScoped<SellerServices>(); 
+            services.AddScoped<ContribuinteServices>();
+            
         }
 
 

@@ -1,0 +1,50 @@
+﻿@model IEnumerable<WebApplication1.Models.Contribuinte>;
+
+
+@{
+    ViewData["Title"] = "Contribuintes";
+}
+
+<h2>@ViewData["Title"]</h2>
+
+<h3>Teste Pagina de Contribuintes</h3>
+
+<table class="table table-striped table-hover">
+    <thead >
+        <tr class="success">
+            <th>
+                @Html.DisplayNameFor(model => model.Id);
+            </th>
+            <th>
+                @Html.DisplayNameFor(model => model.Nome);
+            </th>
+            <th>
+                @Html.DisplayNameFor(model => model.AnoNascimento);
+            </th>
+            <th>
+                @Html.DisplayNameFor(model => model.Cidade);
+            </th>
+        </tr>
+    </thead>
+    <tbody>
+        @foreach (var item in Model)
+        {
+            <tr>
+
+                <th>
+                    @Html.DisplayFor(modelItem => item.Id)
+                </th>
+                <th>
+                    @Html.DisplayFor(modelItem => item.Nome)
+                </th>
+                <th>
+                    @Html.DisplayFor(modelItem => item.AnoNascimento)
+                </th>
+                <th>
+                    @Html.DisplayFor(modelItem => item.Cidade)
+                </th>
+
+            </tr>
+        }
+    </tbody>
+</table>
